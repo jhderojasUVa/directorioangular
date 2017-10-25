@@ -21,27 +21,6 @@ export class DirectorioComponent implements OnInit  {
 
   ngOnInit() {
     console.log("--> DirectorioComponent.ngOnInit");
-    //Solicitamos el nodo 0
-    //this.service.getData().subscribe(data => this.profile = data);
-    //this.service.getData();
-
-
-    /*
-    this.datosService
-      .leerDatos()
-      .subscribe(res => {
-        this.datos = res.json();
-      });
-      */
   }
-
-  /*
-  leerDatos(): Observable<Response> {
-    // Se declara cómo va a ser la llamada
-    // ocultando los pormenores a los consumidores
-    return this.http.get("http://localhost/directoriows/index.php/Directorio/data/id/0/");
-    // En este momento aún no se efectuó la llamada
-  }
-  */
 
 }

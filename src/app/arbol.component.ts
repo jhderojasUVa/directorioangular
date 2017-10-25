@@ -27,6 +27,7 @@ export class ArbolComponent implements OnInit {
   private nodeId: number;
 
   ngOnInit() {
+    // Inicio del componente
     console.log("--> ArbolComponent.ngOnInit");
     console.log(this.route.paramMap);
     console.log(this.route.snapshot.paramMap);
@@ -54,44 +55,12 @@ export class ArbolComponent implements OnInit {
 
         }
     });
-
-
-/*
-    this.arbol=this.route.paramMap.switchMap(
-      (params: ParamMap) => {
-        console.log("switchMap");
-        this.nodeId = +params.get('id');
-        console.log(this.nodeId);
-        return this.service.leerNodo(this.nodeId).then(response => {
-          console.log(response);
-          this.arbol=response;
-          return response
-        });;
-    });
-    */
-    /*
-    this.hero$ = this.route.paramMap
-    .switchMap((params: ParamMap) =>
-      this.service.leerNodo(params.get('id'))).then(response => {
-        this.arbol=response;
-      });
-      */
-
   }
 
   gotoNode(nodo) {
+    // Ir al nodo
     console.log("--> gotoNode ");
     console.log(nodo);
     console.log(nodo.id);
-
-/*
-    this.service.leerNodo(nodo.id).then(response => {
-      console.log(response);
-      this.arbol=response;
-    });
-    */
   }
-
-
-
 }
