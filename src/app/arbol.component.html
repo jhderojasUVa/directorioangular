@@ -21,15 +21,14 @@
     <div class="columns small-12">
       <div class="row">
         <div class="columns small-12 medium-4" style="margin-top: 20px">
-          <h2>{{arbol.descripcion}}</h2>
-          <div *ngIf="arbol.idpadre != '0'"><a routerLink="/arbol/{{arbol.idpadre}}" class="button"><i class="fi-arrow-left"></i> Retroceder</a></div>
+          <div *ngIf="arbol.idpadre != '0' || arbol.id !='0'"><a routerLink="/arbol/{{arbol.idpadre}}" class="button"><i class="fi-arrow-left"></i> Retroceder</a></div>
           <ul class="vertical menu icons icon-left">
             <li *ngFor="let nodo of arbol.hijos" ><a routerLink="/arbol/{{nodo.id}}" routerLinkActive="active"><i class="fi-plus"></i><span>{{nodo.descripcion}}</span></a></li>
           </ul>
         </div>
 
-        <div *ngIf="arbol.direccion || arbol.direccion_google || arbol.carta || arbol.email" class="columns small-12 medium-8" style="margin-top: 20px">
-            <h3>{{arbol.descripcion}}</h3>
+        <div *ngIf="arbol.direccion || arbol.direccion_google || arbol.carta || arbol.email" class="columns small-12 medium-5" style="margin-top: 20px">
+            <h3 class="headline">{{arbol.descripcion}}</h3>
             <p>{{arbol.direccion}}, {{arbol.codigo_postal}}<br/>{{arbol.provincia}}</p>
             <div *ngIf="arbol.nombre" class="responsable">
               <h3 *ngIf="arbol.unidad">{{arbol.unidad}}</h3>
@@ -42,6 +41,11 @@
               <h3>Carta de Servicios</h3>
               <p>{{carta}}</p>
             </div>
+        </div>
+        <div *ngIf="arbol.direccion_google" class="columns small-12 medium-3" style="margin-top:20px;">
+            <h3 class="headline"><i class="fi-marker"></i> Localización</h3>
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{arbol.direccion}},Spain&zoom=15&size=400x400&markers=color:blue|&key=AIzaSyC6s_Gg7FmyR8wxke4cgr8F8AwgQAqkW9U" alt="{{arbol.descripcion}}">
+            <small>{{arbol.direccion}}<br/>{{arbol.codigo_postal}}, {{arbol.provincia}}</small>
         </div>
       </div>
   </div>

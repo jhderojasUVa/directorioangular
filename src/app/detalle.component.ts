@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DirectorioService } from './directorio.service';
+import { Gmaps } from 'google-maps';
 
 @Component({
   selector: 'app-detalle',
@@ -30,6 +31,10 @@ export class DetalleComponent implements OnInit {
       this.nodo=response;
       console.log(this.nodo);
     });
+
+    // Pintamos el Googlemaps
+    Gmaps.KEY = 'AIzaSyDQBMjz4qeaDGZ8E8ZBW_p5SWk5a-hNit';
+    Gmaps.LIBRARUES = ['geometry', 'places'];
   }
 
 }
