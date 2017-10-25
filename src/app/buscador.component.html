@@ -52,12 +52,11 @@
     <ul class="vertical menu icons icon-left">
       <li *ngFor="let nodo of nodes" >
         <a routerLink="/nodo/{{nodo.id}}" routerLinkActive="active">
-          <i class="fi-plus"></i>
-
+          <i class="fi-comment"></i>
+          <span>{{nodo.nombre}}</span>&nbsp;
+          <span>{{nodo.apellido1}}</span>&nbsp;
+          <span>{{nodo.apellido2}}</span>&nbsp;|&nbsp;
           <span>{{nodo.descripcion}}</span>
-          <span>{{nodo.nombre}}</span>
-          <span>{{nodo.apellido1}}</span>
-          <span>{{nodo.apellido2}}</span>
         </a>
       </li>
     </ul>
