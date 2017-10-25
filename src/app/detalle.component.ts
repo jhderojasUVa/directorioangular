@@ -32,9 +32,9 @@ export class DetalleComponent implements OnInit {
       console.log(this.nodo);
     });
 
-    // Pintamos el Googlemaps
-    Gmaps.KEY = 'AIzaSyDQBMjz4qeaDGZ8E8ZBW_p5SWk5a-hNit';
-    Gmaps.LIBRARUES = ['geometry', 'places'];
+    // Pintamos el Googlemaps y ya lo haremos
+    //Gmaps.KEY = 'AIzaSyDQBMjz4qeaDGZ8E8ZBW_p5SWk5a-hNit';
+    //Gmaps.LIBRARUES = ['geometry', 'places'];
   }
 
 }
