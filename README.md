@@ -1,6 +1,8 @@
-# Directorioangular
+# Directori UVa Aangular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
+
+This is a version of the Directory made in Angular/Web Components/Web Services.
 
 ## Development server
 
