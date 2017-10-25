@@ -1,0 +1,17 @@
+<div *ngIf="nodo" class="row" style="margin-top: 20px;">
+  <div class="columns small-12 medium-8">
+    <h2 class="headline">{{nodo.unidad}}</h2>
+    <h3>{{nodo.nombre}} {{nodo.apellido1}} {{nodo.apellido2}}</h3>
+    <p>{{nodo.descripcion}}</p>
+    <p>{{nodo.nombre_edificio}}<br/>
+    {{nodo.direccion}}, {{nodo.codigo_postal}}</p>
+    <div ng-if="nodo.telefono"><p><i class="fi-telephone"></i> <a href="tel://{{nodo.telefono}}">{{nodo.telefono}}</a></p></div>
+    <div ng-if="nodo.fax"><p><small>Fax</small> <a href="tel://{{nodo.fax}}">{{nodo.fax}}</a></p></div>
+    <p><i class="fi-mail"></i> <a href="mailto:{{nodo.email}}">{{nodo.email}}</a></p>
+    <p>{{nodo.direccion_google}}</p>
+  </div>
+  <div class="columns small-12 medium-4">
+    <h2><i class="fi-marker"></i> Localización</h2>
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=14&size=400x400&key=AIzaSyDQBMjz4qeaDGZ8E8ZBW_p5SWk5a-hNit">
+  </div>
+</div>

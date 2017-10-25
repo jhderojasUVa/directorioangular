@@ -1,0 +1,65 @@
+<div class="row" style="margin-top: 10px;">
+  <div class="small-12 large-12 columns">
+    <h2><strong>Busqueda</strong> en el <strong>directorio</strong></h2>
+    <form (ngSubmit)="onSubmit(searchForm.value)" #searchForm="ngForm">
+      <div class="row">
+        <div class="small-12 medium-6 columns">
+          <label>Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="nombre" ngModel>
+
+        </div>
+        <div class="small-12 medium-6 columns">
+          <label>Primer apellido
+            <input id="apellido1" name="apellido1" type="text" placeholder="apellido"  ngModel>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-6 columns">
+          <label>Segundo apellido
+            <input id="apellido2" name="apellido2" type="text" placeholder="apellido" ngModel>
+          </label>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <label>Centro
+            <input id="centro" name="centro" type="text" placeholder="centro" ngModel>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-6 columns">
+          <label>Puesto
+            <input id="puesto" name="puesto" type="text" placeholder="puesto/cargo" ngModel>
+          </label>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <label>Extensión
+            <input id="extension" name="extension" type="text" placeholder="extensión" ngModel>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-12 columns">
+          <button type="submit"><i class="fi-magnifying-glass"></i> Buscar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Resultados -->
+<div class="row">
+  <div *ngIf="nodes">
+    <ul class="vertical menu icons icon-left">
+      <li *ngFor="let nodo of nodes" >
+        <a routerLink="/nodo/{{nodo.id}}" routerLinkActive="active">
+          <i class="fi-plus"></i>
+
+          <span>{{nodo.descripcion}}</span>
+          <span>{{nodo.nombre}}</span>
+          <span>{{nodo.apellido1}}</span>
+          <span>{{nodo.apellido2}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
