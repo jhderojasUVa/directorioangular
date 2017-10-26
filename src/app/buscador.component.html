@@ -1,38 +1,38 @@
 <div style="margin-top: 10px;">
   <div class="small-12 small-centered large-12 large-centered columns">
-    <h2 class="text-center"><strong>Busqueda</strong> en el <strong>directorio</strong></h2>
+    <h1 class="text-center"><span style="border-bottom: 1px dotted #000;"><strong>Busqueda</strong> en el <strong>directorio</strong> UVa</span></h1>
     <form (ngSubmit)="onSubmit(searchForm.value)" #searchForm="ngForm">
       <div class="row">
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-12 columns">
           <label>Nombre</label>
           <input id="nombre" name="nombre" type="text" placeholder="nombre" ngModel>
-
         </div>
+      </div>
+      <div class="row">
         <div class="small-12 medium-6 columns">
           <label>Primer apellido
             <input id="apellido1" name="apellido1" type="text" placeholder="apellido"  ngModel>
           </label>
         </div>
-      </div>
-      <div class="row">
+
         <div class="small-12 medium-6 columns">
           <label>Segundo apellido
             <input id="apellido2" name="apellido2" type="text" placeholder="apellido" ngModel>
           </label>
         </div>
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-12 columns">
           <label>Centro
             <input id="centro" name="centro" type="text" placeholder="centro" ngModel>
           </label>
         </div>
       </div>
       <div class="row">
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-8 columns">
           <label>Puesto
             <input id="puesto" name="puesto" type="text" placeholder="puesto/cargo" ngModel>
           </label>
         </div>
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-4 columns">
           <label>Extensión
             <input id="extension" name="extension" type="text" placeholder="extensión" ngModel>
           </label>
@@ -46,9 +46,13 @@
     </form>
   </div>
 </div>
+
 <!-- Resultados -->
-<div class="row">
-  <div *ngIf="nodes">
+<div *ngIf="nodes" class="row">
+  <div class="small-12 small-centered columns">
+    <h2 class="text-center"><span style="border-bottom: 1px dotted #000;">Resultados de la busqueda</span></h2>
+  </div>
+  <div class="small-12 medium-12 columns">
     <ul class="vertical menu icons icon-left">
       <li *ngFor="let nodo of nodes" >
         <a routerLink="/nodo/{{nodo.id}}" routerLinkActive="active">
