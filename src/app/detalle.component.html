@@ -11,7 +11,8 @@
   </div>
   <div class="columns small-12 medium-4">
     <h2><i class="fi-marker"></i> Localización</h2>
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center={{nodo.direccion}},Spain&zoom=15&size=400x400&markers=color:blue|&key=AIzaSyC6s_Gg7FmyR8wxke4cgr8F8AwgQAqkW9U">
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center={{nodo.direccion}},{{nodo.localidad}},Spain&zoom=15&size=400x400&markers=color:blue|&key=AIzaSyC6s_Gg7FmyR8wxke4cgr8F8AwgQAqkW9U">
+    <div class="localizacion">{{nodo.direccion}}<br/>{{nodo.codigo_postal}}, {{nodo.provincia}}</div>
     <p class="text-center" style="margin-top:10px;"><a href="http://www.google.es/maps/place/{{nodo.nombre_edificio}},{{nodo.direccion}},{{nodo.codigo_postal}},Spain" role="link" target="_blank" class="button"><i class="fi-marker"></i>&nbsp;&nbsp;&nbsp;Abrir en Google Maps</a><br/>
     <small>{{nodo.direccion_google}}</small></p>
   </div>

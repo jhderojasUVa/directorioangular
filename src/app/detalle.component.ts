@@ -28,7 +28,7 @@ export class DetalleComponent implements OnInit {
 
     //Leemos el nodo ráiz
     this.service.leerNodo(id).then(response => {
-      this.nodo=response;
+      this.nodo = response;
       console.log(this.nodo);
     });
 
