@@ -44,9 +44,9 @@
         </div>
         <div *ngIf="arbol.direccion_google" class="columns small-12 medium-3" style="margin-top:20px;">
             <h3 class="headline"><i class="fi-marker"></i> Localización</h3>
-            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{arbol.direccion}},{{arbol.localidad}},Spain&zoom=15&size=400x400&markers=color:blue|&key=AIzaSyC6s_Gg7FmyR8wxke4cgr8F8AwgQAqkW9U" alt="{{arbol.descripcion}}">
+            <a href="http://www.google.es/maps/place/{{arbol.direccion}},{{arbol.codigo_postal}},{{arbol.localidad}},Spain" role="link" target="_blank"><img src="https://maps.googleapis.com/maps/api/staticmap?center={{arbol.direccion}},{{arbol.codigo_postal}},{{arbol.localidad}},Spain&zoom=15&size=400x400&markers=color:blue|&key=AIzaSyC6s_Gg7FmyR8wxke4cgr8F8AwgQAqkW9U" alt="{{arbol.descripcion}}"></a>
             <div class="localizacion">{{arbol.direccion}}<br/>{{arbol.codigo_postal}}, {{arbol.provincia}}</div>
-            <p class="text-center" style="margin-top:10px;"><a href="http://www.google.es/maps/place/{{arbol.direccion}},{{arbol.codigo_postal}},Spain" role="link" target="_blank" class="button"><i class="fi-marker"></i>&nbsp;&nbsp;&nbsp;Abrir en Google Maps</a><br/><small>{{arbol.direccion_google}}</small></p>
+            <p class="text-center" style="margin-top:10px;"><a href="http://www.google.es/maps/place/{{arbol.direccion}},{{arbol.codigo_postal}},{{arbol.localidad}},Spain" role="link" target="_blank" class="button"><i class="fi-marker"></i>&nbsp;&nbsp;&nbsp;Abrir en Google Maps</a><br/><small>{{arbol.direccion_google}}</small></p>
         </div>
       </div>
   </div>
