@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DirectorioService } from './directorio.service';
-import { Gmaps } from 'google-maps';
+//import { Gmaps } from 'google-maps';
 
 @Component({
   selector: 'app-detalle',
@@ -12,6 +12,8 @@ export class DetalleComponent implements OnInit {
   @Output() nodo;
   //Id del nodo seleccionado
 
+  @Output() search;
+
   private nodeId: number;
   constructor(
     private route: ActivatedRoute,
@@ -20,16 +22,17 @@ export class DetalleComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("--> ArbolComponent.ngOnInit");
-    console.log(this.route.paramMap);
-    console.log(this.route.snapshot.paramMap);
+    //console.log("--> ArbolComponent.ngOnInit");
+    //console.log(this.route.paramMap);
+    //console.log(this.route.snapshot.paramMap);
     let id: number = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(id);
+    //console.log(id);
 
     //Leemos el nodo ráiz
     this.service.leerNodo(id).then(response => {
       this.nodo = response;
-      console.log(this.nodo);
+      this.search = this.service.lastSearch;
+      //console.log(this.nodo);
     });
 
     // Pintamos el Googlemaps y ya lo haremos

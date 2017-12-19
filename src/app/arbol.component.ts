@@ -28,11 +28,11 @@ export class ArbolComponent implements OnInit {
 
   ngOnInit() {
     // Inicio del componente
-    console.log("--> ArbolComponent.ngOnInit");
-    console.log(this.route.paramMap);
-    console.log(this.route.snapshot.paramMap);
+    //console.log("--> ArbolComponent.ngOnInit");
+    //console.log(this.route.paramMap);
+    //console.log(this.route.snapshot.paramMap);
     let id: number = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(id);
+    //console.log(id);
 
     //Leemos el nodo ráiz
     this.service.leerNodo(id).then(response => {
@@ -42,15 +42,15 @@ export class ArbolComponent implements OnInit {
     this.router.events.subscribe((val) => {
         // see also
         var self=this;
-        console.log("CAMBIO EN LA RUTA");
-        console.log(val instanceof NavigationEnd);
+        //console.log("CAMBIO EN LA RUTA");
+        //console.log(val instanceof NavigationEnd);
         if (val instanceof NavigationEnd) {
-          console.log(this.route.snapshot.paramMap.get('id'));
+          //console.log(this.route.snapshot.paramMap.get('id'));
           this.nodeId = +this.route.snapshot.paramMap.get('id');
-          console.log(this.nodeId);
+          //console.log(this.nodeId);
           this.service.leerNodo(this.nodeId).then(response => {
             self.arbol=response;
-            console.log(self.arbol);
+            //console.log(self.arbol);
           });
 
         }
@@ -59,8 +59,8 @@ export class ArbolComponent implements OnInit {
 
   gotoNode(nodo) {
     // Ir al nodo
-    console.log("--> gotoNode ");
-    console.log(nodo);
-    console.log(nodo.id);
+    //console.log("--> gotoNode ");
+    //console.log(nodo);
+    //console.log(nodo.id);
   }
 }

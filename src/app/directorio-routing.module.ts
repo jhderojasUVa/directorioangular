@@ -7,18 +7,28 @@ import { DetalleComponent } from './detalle.component';
 
 const directorioRoutes: Routes = [
   { path: 'search', component: BuscadorComponent },
-  { path: 'arbol/:id', component: ArbolComponent },
-  { path: 'nodo/:id', component: DetalleComponent },
-  { path: 'inicio', component: ArbolComponent }, // Quizas deberiamos ir a otra pagina...
-  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: 'search/nombre/:nombre', component: BuscadorComponent },
+  { path: 'arbol/:id',      component: ArbolComponent },
+  { path: 'nodo/:id',      component: DetalleComponent },
+  {
+    path: 'inicio',
+    component: ArbolComponent,
+    data: { title: 'Directorio Árbol' }
+  },
+  { path: '',
+    redirectTo: '/inicio',
+    pathMatch: 'full'
+  },
+  //{ path: '**', component: PageNotFoundComponent }
 ];
 
 
 @NgModule({
   imports: [
+    //RouterModule.forChild(directorioRoutes)
     RouterModule.forRoot(
       directorioRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
   exports: [

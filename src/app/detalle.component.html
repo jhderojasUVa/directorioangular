@@ -1,7 +1,14 @@
 <div *ngIf="nodo" class="row" style="margin-top: 20px;">
+
   <div class="columns small-12 medium-8">
+      <div>
+        <a routerLink="/search" class="button">
+          <i class="fi-arrow-left"></i>&nbsp;&nbsp;&nbsp;Retroceder
+        </a>
+      </div>
     <h2 class="headline">{{nodo.unidad}}</h2>
     <h3>{{nodo.nombre}} {{nodo.apellido1}} {{nodo.apellido2}}</h3>
+    <p>{{nodo.puesto_cargo}}</p>
     <p>{{nodo.descripcion}}</p>
     <p>{{nodo.nombre_edificio}}<br/>
     {{nodo.direccion}}, {{nodo.codigo_postal}}</p>

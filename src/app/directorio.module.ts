@@ -6,6 +6,7 @@ import { FormsModule }   from '@angular/forms';
 //import { RouterModule, Routes } from '@angular/router';
 //import { AppRoutingModule } from './app-routing.module';
 import { DirectorioRoutingModule } from './directorio-routing.module';
+import { AcentosPipe } from './acentos.pipe';
 
 import { DirectorioComponent } from './directorio.component';
 import { DirectorioService } from './directorio.service';
@@ -19,6 +20,7 @@ import { DetalleComponent } from './detalle.component';
     BuscadorComponent,
     ArbolComponent,
     DetalleComponent,
+    AcentosPipe
   ],
   imports: [
     DirectorioRoutingModule,
