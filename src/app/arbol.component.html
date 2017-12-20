@@ -35,13 +35,13 @@
           </div>
           <div class="row">
             <div *ngIf="arbol.nietos.length == 0" class="columns small-12 medium-12" style="margin-top: 20px">
-              <ul>
+              <ul class="nodos_hijos">
                 <li *ngFor="let nodo of arbol.hijos" >
-                  <span class="titulo_descripcion">{{nodo.descripcion}}</span>
+                  <span class="titulo_descripcion"><h3 class="headline">{{nodo.descripcion}}</h3></span>
                   <i class="fi-torso"></i>
-                  <span class="titulo_descripcion">{{nodo.apellido1}} {{nodo.apellido2}}, {{nodo.nombre}}</span>
-                  <span class="titulo_descripcion">Tlfn/Ext: {{nodo.telefono}}</span>
-                  <span class="titulo_descripcion">Tlfn/Ext: {{nodo.email}}</span>
+                  <p><strong>{{nodo.apellido1}} {{nodo.apellido2}}, {{nodo.nombre}}</strong></p>
+                  <p><i class="fi-telephone"></i> <small>Tlfn/Ext</small> <a href="tel://{nodo.telefono}}">{{nodo.telefono}}</a></p>
+                  <p><i class="fi-mail"></i> <a href="mailto:{{nodo.email}}">{{nodo.email}}</a></p>
                   <a routerLink="/arbol/{{nodo.id}}" routerLinkActive="active">
                     <i class="fi-zoom-in"></i>
                   </a>
